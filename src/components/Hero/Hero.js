@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components/macro";
 
-import { ImgSource } from '../ImgSource';
+import { ImgSource } from "../ImgSource";
 
 const Hero = () => {
   return (
@@ -9,9 +9,12 @@ const Hero = () => {
       <picture>
         <ImgSource type="avif" src="/images/hero-img.jpg" />
         <ImgSource type="jpeg" extension="jpg" src="/images/hero-img.jpg" />
-        <HeroImage src="/images/hero-img.jpg" />
+        <HeroImage
+          src="/images/hero-img.jpg"
+          alt="example picture: cute cat staring at the viewer"
+        />
       </picture>
-      <Swoop src="/swoop.svg" />
+      <Swoop src="/swoop.svg" alt="" />
     </Wrapper>
   );
 };
