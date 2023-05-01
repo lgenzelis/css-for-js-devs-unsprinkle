@@ -1,10 +1,16 @@
-import React from 'react';
-import styled from 'styled-components/macro';
+import React from "react";
+import styled from "styled-components/macro";
+
+import { ImgSource } from '../ImgSource';
 
 const Hero = () => {
   return (
     <Wrapper>
-      <HeroImage src="/images/hero-img.jpg" />
+      <picture>
+        <ImgSource type="avif" src="/images/hero-img.jpg" />
+        <ImgSource type="jpeg" extension="jpg" src="/images/hero-img.jpg" />
+        <HeroImage src="/images/hero-img.jpg" />
+      </picture>
       <Swoop src="/swoop.svg" />
     </Wrapper>
   );
@@ -25,6 +31,7 @@ const HeroImage = styled.img`
   width: 500px;
   height: 500px;
   max-height: 100%;
+  object-fit: cover;
 `;
 
 const Swoop = styled.img`
@@ -35,6 +42,9 @@ const Swoop = styled.img`
     Overhang by a couple px to prevent any pixel-rounding
     display issues
   */
+  min-height: 50px;
+  object-fit: cover;
+  object-position: 0 0;
   bottom: -2px;
   width: 100%;
 `;
